@@ -18,9 +18,9 @@ var Queue = function () {
     //To avoid having a negative count of items
     if (storage.end - storage.start >= 1) {
       //store the first item in var
-      var deletedItem = storage[storage.start]
+      var deletedItem = storage[storage.start];
       //delete the first item
-      delete storage[storage.start]
+      delete storage[storage.start];
       //increase the start count to account for deleted
       storage.start++;
       //return the first item (which was deleted)
