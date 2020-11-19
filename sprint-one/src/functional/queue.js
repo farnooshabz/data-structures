@@ -15,11 +15,21 @@ var Queue = function () {
   };
 
   someInstance.dequeue = function () {
-    storage.end--;
+    //To avoid having a negative count of items
+    if (storage.end - storage.start >= 1) {
+      //store the first item in var
+      var deletedItem = storage[storage.start]
+      //delete the first item
+      delete storage[storage.start]
+      //increase the start count to account for deleted
+      storage.start++;
+      //return the first item (which was deleted)
+      return deletedItem;
+    }
   };
 
   someInstance.size = function () {
-
+    return storage.end - storage.start;
   };
 
   return someInstance;
