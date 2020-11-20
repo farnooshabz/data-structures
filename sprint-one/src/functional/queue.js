@@ -5,7 +5,7 @@ var Queue = function () {
   var storage = {};
   storage.start = 0;
   storage.end = 0;
-  console.log(storage);
+
 
   // Implement the methods below
 

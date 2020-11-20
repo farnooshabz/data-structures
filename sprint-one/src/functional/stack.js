@@ -1,4 +1,4 @@
-var Stack = function () {
+var Stack = function (start, end) {
   var someInstance = {};
 
   // Use an object with numeric keys to store values
@@ -9,10 +9,12 @@ var Stack = function () {
 
 
 
+
   // Implement the methods below
   someInstance.push = function (value) {
     storage[storage.end] = value;
     storage.end++;
+    //console.log("storage after push", storage)
   };
 
   someInstance.pop = function () {
