@@ -1,5 +1,5 @@
 var Stack = function () {
-  //var instance = Object.create
+  var instance = Object.create(stackMethods);
   instance.storage = {};
 
   instance.storage.start = 0;
