@@ -1,4 +1,4 @@
-const Stack = function () {
+var Stack = function () {
   //const instance = {}
   this.storage = {};
   this.storage.start = 0;
