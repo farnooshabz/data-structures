@@ -14,8 +14,8 @@ var queueMethods = {
   enqueue: function (value) {
     this.storage[this.storage.end] = value;
     this.storage.end++;
-    // console.log("this.storage after push", this.storage);
-    // console.log("this.storage.end", this.storage.end);
+    // console.log('this.storage after push', this.storage);
+    // console.log('this.storage.end', this.storage.end);
   },
 
   dequeue: function (value) {
