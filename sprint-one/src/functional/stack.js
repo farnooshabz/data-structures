@@ -7,9 +7,6 @@ var Stack = function (start, end) {
   storage.end = 0;
 
 
-
-
-
   // Implement the methods below
   someInstance.push = function (value) {
     storage[storage.end] = value;
