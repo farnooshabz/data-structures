@@ -1,13 +1,24 @@
 var BinarySearchTree = function (value) {
-  // var instance = {};
-  // instance.root = {};
+  var instance = {};
+  //instance.root = {};
+  instance.children = [];
+  instance.left = 0;
+  instance.right = 0;
 
-  // instance.left = 0;
-  // instance.right = 0;
+  _.extend(instance, methods);
 
-  // _.extend(instance, methods);
+  return instance;
+};
 
-  // return instance;
+var methods = {
+  addChild: function (value) {
+    //return "test";
+  },
+
+  contains: function (value) {
+    //return "test2";
+  }
+
 };
 
 

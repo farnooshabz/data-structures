@@ -4,7 +4,7 @@ var LinkedList = function () {
   list.tail = null;
 
   list.addToTail = function (value) {
-    var newNode = Node(value)
+    var newNode = Node(value);
     if (list.head === null && list.tail === null) {
       list.tail = newNode;
       list.head = newNode;
@@ -19,17 +19,17 @@ var LinkedList = function () {
   };
 
   list.removeHead = function () {
-    console.log("list.head", list.head)
+    //console.log("list.head", list.head)
     var firstNode = list.head;
-    delete list.head
+    delete list.head;
     //delete removes key value pair
-    list.head = firstNode.next
+    list.head = firstNode.next;
     return firstNode.value;
   };
 
   list.contains = function (target) {
 
-    console.log("target", target)
+    //console.log("target", target)
     //define a current var assigned to head
     var element = list.head;
     //while current in not null
@@ -37,7 +37,7 @@ var LinkedList = function () {
 
     //if(element) -Checks if its truthy or falsy, stick to strict comparisons for now
     while (element !== null) {
-      console.log("element", element)
+      //console.log("element", element)
       //if current is equal to target
       if (element.value === target) {
         return true;
