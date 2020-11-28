@@ -1,51 +1,48 @@
-var Tree = function (value) {
+var Tree = function(value) {
   var newTree = {};
   newTree.value = value;
-  newTree.children = [];
-  _.extend(newTree, treeMethods);
+  // your code here
+  //newTree.childNode = {};
+  newTree = _.extend (newTree, treeMethods);
+  newTree.children = [];// fix me
+
   return newTree;
 };
 
 var treeMethods = {};
 
-treeMethods.addChild = function (value) {
-
-  var newNode = Tree(value);
-  this.children.push(newNode);
+treeMethods.addChild = function(value) {
+  var child = Tree (value);
+  this.children.push(child);
 };
 
-treeMethods.contains = function (target) {
+treeMethods.contains = function(target) {
   var isFound = false;
-  var eachNode = this.children;
   if (this.value === target) {
     return true;
   }
-  var findTargetInNested = function (item) {
-    if (item.value === target) {
-      isFound = true;
-      return;
+  for (var i = 0; i < this.children.length; i++) {
+    if (this.children[i].value === target) {
+      return true;
     }
-    if (item.children.length >= 1) {
-      console.log('item children', item.children);
-      item.children.forEach(function(element) {
-        findTargetInNested(element);
-      });
-    }
-  };
-
-
-  console.log('eachNode', eachNode);
-
-  if (eachNode.length >= 1) {
-    for (var i = 0; i < eachNode.length; i++) {
-      var current = eachNode[i];
-      if (isFound === true) {
-        break;
+    if (this.children[i].children.length > 0) {
+      for (var j = 0; j < this.children[i].children.length; j++) {
+        isFound = this.children[i].children[j].contains(target);
+        if (isFound) {
+          return true;
+        }
       }
-      findTargetInNested(current);
+      //isFound = item.contains(target)
+
     }
   }
-
   return isFound;
+
 };
 
+
+
+/*
+ * Complexity: What is the time complexity of the above functions?
+
+ */
