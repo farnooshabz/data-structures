@@ -52,7 +52,7 @@ Graph.prototype.hasEdge = function(fromNode, toNode) {
 Graph.prototype.addEdge = function(fromNode, toNode) {
   var key = fromNode.toString() + toNode.toString();
   this.edges[key] = key;
-  console.log('edge', this.edges);
+
 };
 
 
