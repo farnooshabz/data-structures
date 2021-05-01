@@ -1,6 +1,6 @@
 var Set = function() {
   var set = Object.create(setPrototype);
-  set._storage = []; // fix me
+  set._storage = {}; // fix me
   return set;
 };
 
@@ -8,21 +8,15 @@ var setPrototype = {};
 
 setPrototype.add = function(item) {
   //check the storage for item if it was not there
-  if (this._storage.indexOf(item) === -1) {
-    this._storage.push(item);
-  }
+  this._storage[item] = true;
 };
 
 setPrototype.contains = function(item) {
-  if (this._storage.indexOf(item) !== -1) {
-    return true;
-  }
-  return false;
+  return !!this._storage[item];
 };
 
 setPrototype.remove = function(item) {
-  var idx = this._storage.indexOf(item);
-  this._storage.splice(idx, 1);
+  delete this._storage[item];
 };
 
 /*
